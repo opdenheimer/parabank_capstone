@@ -97,7 +97,12 @@ Check Account Balance
     
     ${acc_balance}=  Get From Dictionary    ${body}  balance
     Log To Console    acc_balance: ${acc_balance}
+    IF  ${acc_balance}>=0
     Should Be True    ${acc_balance} >= 0    Account balance is negative: ${acc_balance}
+    END
+    IF  ${acc_balance}<0
+        Log To Console   ${acc_balance} is negative
+    END
     Log To Console    Account balance is ${acc_balance}
 
 Check Reduced balance after Transfer

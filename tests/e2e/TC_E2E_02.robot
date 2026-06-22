@@ -12,14 +12,6 @@ Test Teardown   Close Application
 *** Test Cases ***
 TC_E2E_02-Transfer via UI Debit Equals Credit via API
     [Documentation]    Verify the amount debited from the source exactly equals the amount credited to the destination.
-    ...
-    ...                Steps:
-    ...                1. Login via UI and open a Checking account (source) and Savings account (destination)
-    ...                2. Login via API to retrieve Customer ID
-    ...                3. Record src_balance_before and dest_balance_before via API
-    ...                4. Transfer 100 from source to destination via UI
-    ...                5. Re-fetch both accounts from API
-    ...                6. Compute debit and credit, assert debit == credit == 100
     [Tags]    Functional
 
     # Step 1: UI - Login and open both accounts

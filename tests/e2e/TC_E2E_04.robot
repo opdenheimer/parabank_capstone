@@ -8,7 +8,7 @@ Suite Setup  Load Environment
 Test Setup  Open Application
 Test Teardown  Close Application
 *** Test Cases ***
-TC_E2E_05-validate account creation
+TC_E2E_04-validate account creation
     [Documentation]    This test case will perform an end-to-end test of the application, including user login, opening a new account and validating the account creation.
     Log In With Valid Credentials
     OPEN SAVINGS ACCOUNT
