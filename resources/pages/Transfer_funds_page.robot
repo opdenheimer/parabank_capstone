@@ -14,10 +14,12 @@ Transfer Funds with account creation
     Click Element    ${select_acc_dropdown}
     Select From List By Label    ${select_acc_dropdown}    CHECKING
     Sleep    3s
+    Wait Until Element Is Enabled    ${open_new_acc_btn}    10s
     Click Element    ${open_new_acc_btn}
     Log To Console    New checking account opened successfully
     Wait Until Element Is Visible    ${acc_id}    timeout=10s
     ${checking_account_number}=    Get Text    ${acc_id}
+    Set Suite Variable    ${checking_account_number}  ${checking_account_number}
     Log To Console    Checking Account Number: ${checking_account_number}
 
 #    OPEN SAVINGS ACCOUNT
@@ -28,10 +30,12 @@ Transfer Funds with account creation
     Click Element    ${select_acc_dropdown}
     Select From List By Label    ${select_acc_dropdown}    SAVINGS
     Sleep    3s
+    Wait Until Element Is Enabled    ${open_new_acc_btn}    10s
     Click Element    ${open_new_acc_btn}
     Log To Console    New savings account opened successfully
     Wait Until Element Is Visible    ${acc_id}    timeout=20s
     ${saving_account_number}=    Get Text    ${acc_id}
+    Set Suite Variable    ${saving_account_number}  ${saving_account_number}
     Log To Console    Saving Account Number: ${saving_account_number}
 
 
