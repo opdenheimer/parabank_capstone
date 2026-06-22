@@ -123,7 +123,7 @@ pipeline {
         }
 
         // -------------------------------------------------------------
-        // Stage 5: Execute all Robot Framework tests parallel
+        // Stage 5: Execute all Robot Framework tests recursively
         // -------------------------------------------------------------
         stage('Execute Robot Tests') {
             steps {
@@ -139,7 +139,7 @@ pipeline {
                     mkdir "%OUTPUT_DIR%"
 
                     echo Running Robot Framework tests from "%TESTS_DIR%" (recursive)...
-                    python -m pabot.pabot --processes 2 --outputdir "%OUTPUT_DIR%" --listener allure_robotframework:%ALLURE_RESULTS% "%TESTS_DIR%"
+                    python -m robot --outputdir "%OUTPUT_DIR%" --listener allure_robotframework:%ALLURE_RESULTS% "%TESTS_DIR%"
 
                     set RC=%ERRORLEVEL%
                     echo Robot Framework execution finished with exit code %RC%.
