@@ -96,6 +96,7 @@ Check Account Balance
     Log To Console   Accounts: ${body}
     
     ${acc_balance}=  Get From Dictionary    ${body}  balance
+    Set Suite Variable    ${acc_balance}  ${acc_balance}
     Log To Console    acc_balance: ${acc_balance}
     IF  ${acc_balance}>=0
     Should Be True    ${acc_balance} >= 0    Account balance is negative: ${acc_balance}
