@@ -16,6 +16,7 @@ OPEN CHECKING ACCOUNT
     Click Element    ${open_new_acc_btn}
     Log To Console    New checking account opened successfully
     Wait Until Element Is Visible    ${acc_id}    timeout=20s
+    Sleep  2s
     ${checking_account_number}=    Get Text    ${acc_id}
    Set Suite Variable    ${checking_account_Id}  ${checking_account_number}
     Page Should Contain    Congratulations, your account is now open.
@@ -34,6 +35,7 @@ OPEN SAVINGS ACCOUNT
     Click Element    ${open_new_acc_btn}
     Log To Console    New savings account opened successfully
     Wait Until Element Is Visible    ${acc_id}    timeout=20s
+    Sleep  2s
     ${Saving_account_number}=    Get Text    ${acc_id}
     Log To Console    Saving Account Number: ${Saving_account_number}
     Set Suite Variable    ${Saving_Account_Id}    ${Saving_account_number}
